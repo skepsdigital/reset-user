@@ -1,0 +1,51 @@
+<div class="body-container">
+    <section class="war-room-event">
+        <header>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="./../../assets/image/logoSkeps.png" alt="Logo">
+                </div>
+            </div>
+
+            <div class="row" *ngIf="!result">
+
+                <div class="col-md-12">
+                    <input type="text" placeholder="Digite o flow id" [(ngModel)]="flowId">
+                </div>
+
+                <div class="col-md-12">
+                    <input type="text" placeholder="Digite a chave do bot" [(ngModel)]="botKey">
+                </div>
+
+
+                <div class="col-md-12">
+                    <input type="text" placeholder="Digite o bot Slug" [(ngModel)]="botSlug">
+                </div>
+
+
+                <div class="col-md-12">
+                    <input type="text" placeholder="Digite o telefone para testar" [(ngModel)]="queryParticipant">
+                </div>
+
+                <div class="col-md-12">
+                    <button [disabled]="loading" (click)="sendWelcomeMsg()">Iniciar fluxo do chatbot</button>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="result">
+
+                <ng-container>
+                    <div class="col-md-12">
+                        <p>
+                            Verifique seu whatsapp, para prosseguir com seu teste.
+                        </p>
+                    </div>
+                </ng-container>
+                <div class="col-md-12">
+                    <button (click)="reset()">Iniciar fluxo do chatbot</button>
+                </div>
+            </div>
+        </header>
+    </section>
+</div>

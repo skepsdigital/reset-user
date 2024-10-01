@@ -1,0 +1,35 @@
+.body-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.war-room-event {
+    text-align: center;
+
+    img {
+        margin-top: -50px;
+        height: 100px;
+    }
+
+    input {
+        width: 90%;
+        margin: 30px 0px;
+    }
+
+    button {
+        border-color: #3f7de8;
+        border-radius: 3px;
+        color: #fff;
+        background-color: #3f7de8;
+        font-size: 1rem;
+        vertical-align: middle;
+        padding: 0 1.25rem;
+        height: 2.625rem;
+        min-width: 8.125rem;
+        margin-bottom: 0;
+        overflow: hidden;
+        outline: none;
+    }
+}
