@@ -65,7 +65,7 @@ export class ResetComponent implements OnInit {
 
   async send() {
     await this.http.post('https://blipnotificationsender.azurewebsites.net/api/trigger', {
-      "routerBotKey": "d2xja2NvbnN1bHRpbmc6T1oyWUhRc2k5MkloYlVtc2hkVkc=",
+      "routerBotKey": "ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=",
       "botKey": this.botKey,
       "botSlug": this.botSlug,
       "phone": this.queryParticipant,
@@ -81,7 +81,7 @@ export class ResetComponent implements OnInit {
   async getContextContact() {
     const url = 'https://wlck.http.msging.net/commands';
     const headers = {
-      'Authorization': 'Key d2xja2NvbnN1bHRpbmc6T1oyWUhRc2k5MkloYlVtc2hkVkc=',
+      'Authorization': 'Key ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=',
       'Content-Type': 'application/json'
     };
 
@@ -108,7 +108,7 @@ export class ResetComponent implements OnInit {
   async deleteVariable(variableArray: any) {
     const url = 'https://wlck.http.msging.net/commands';
     const headers = {
-      'Authorization': 'Key d2xja2NvbnN1bHRpbmc6T1oyWUhRc2k5MkloYlVtc2hkVkc=',
+      'Authorization': 'Key ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=',
       'Content-Type': 'application/json'
     };
 
@@ -140,7 +140,7 @@ export class ResetComponent implements OnInit {
   async setContact() {
     const url = 'https://wlck.http.msging.net/commands';
     const headers = {
-      'Authorization': 'Key d2xja2NvbnN1bHRpbmc6T1oyWUhRc2k5MkloYlVtc2hkVkc=',
+      'Authorization': 'Key ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=',
       'Content-Type': 'application/json'
     };
 

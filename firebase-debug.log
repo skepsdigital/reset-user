@@ -1,0 +1,138 @@
+[debug] [2025-01-27T19:33:20.302Z] ----------------------------------------------------------------------
+[debug] [2025-01-27T19:33:20.303Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-01-27T19:33:20.304Z] CLI Version:   13.0.1
+[debug] [2025-01-27T19:33:20.304Z] Platform:      win32
+[debug] [2025-01-27T19:33:20.304Z] Node Version:  v18.17.1
+[debug] [2025-01-27T19:33:20.305Z] Time:          Mon Jan 27 2025 16:33:20 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-01-27T19:33:20.305Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-27T19:33:20.308Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-01-27T19:33:20.393Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-27T19:33:20.393Z] > authorizing via signed-in user (felipe.rios@wlck.com.br)
+[debug] [2025-01-27T19:33:20.393Z] [iam] checking project skepsresetusers for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-27T19:33:20.394Z] > refreshing access token with scopes: []
+[debug] [2025-01-27T19:33:20.395Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-01-27T19:33:20.395Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-01-27T19:33:20.621Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-01-27T19:33:20.621Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-01-27T19:33:20.630Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions [none]
+[debug] [2025-01-27T19:33:20.630Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions x-goog-quota-user=projects/skepsresetusers
+[debug] [2025-01-27T19:33:20.630Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-27T19:33:20.835Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-01-27T19:33:20.835Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-01-27T19:33:21.686Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions 200
+[debug] [2025-01-27T19:33:21.686Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {}
+[debug] [2025-01-27T19:33:21.686Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project skepsresetusers:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-01-27T19:33:21.687Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers [none]
+[debug] [2025-01-27T19:33:22.102Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers 403
+[debug] [2025-01-27T19:33:22.102Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-01-27T19:33:22.103Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2025-01-27T19:33:36.616Z] ----------------------------------------------------------------------
+[debug] [2025-01-27T19:33:36.618Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --project reset-user
+[debug] [2025-01-27T19:33:36.618Z] CLI Version:   13.0.1
+[debug] [2025-01-27T19:33:36.618Z] Platform:      win32
+[debug] [2025-01-27T19:33:36.618Z] Node Version:  v18.17.1
+[debug] [2025-01-27T19:33:36.619Z] Time:          Mon Jan 27 2025 16:33:36 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-01-27T19:33:36.619Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-27T19:33:36.672Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-27T19:33:36.672Z] > authorizing via signed-in user (felipe.rios@wlck.com.br)
+[debug] [2025-01-27T19:33:36.673Z] [iam] checking project reset-user for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-27T19:33:36.675Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/reset-user:testIamPermissions [none]
+[debug] [2025-01-27T19:33:36.675Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/reset-user:testIamPermissions x-goog-quota-user=projects/reset-user
+[debug] [2025-01-27T19:33:36.675Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reset-user:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-27T19:33:37.696Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/reset-user:testIamPermissions 200
+[debug] [2025-01-27T19:33:37.696Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/reset-user:testIamPermissions {}
+[debug] [2025-01-27T19:33:37.696Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project reset-user:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-01-27T19:33:37.697Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/reset-user [none]
+[debug] [2025-01-27T19:33:38.225Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/reset-user 403
+[debug] [2025-01-27T19:33:38.225Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/reset-user {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-01-27T19:33:38.226Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2025-01-27T19:33:56.842Z] ----------------------------------------------------------------------
+[debug] [2025-01-27T19:33:56.844Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --project skepsresetusers
+[debug] [2025-01-27T19:33:56.844Z] CLI Version:   13.0.1
+[debug] [2025-01-27T19:33:56.844Z] Platform:      win32
+[debug] [2025-01-27T19:33:56.845Z] Node Version:  v18.17.1
+[debug] [2025-01-27T19:33:56.845Z] Time:          Mon Jan 27 2025 16:33:56 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-01-27T19:33:56.846Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-27T19:33:56.904Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-27T19:33:56.904Z] > authorizing via signed-in user (felipe.rios@wlck.com.br)
+[debug] [2025-01-27T19:33:56.904Z] [iam] checking project skepsresetusers for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-27T19:33:56.906Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions [none]
+[debug] [2025-01-27T19:33:56.906Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions x-goog-quota-user=projects/skepsresetusers
+[debug] [2025-01-27T19:33:56.907Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-27T19:33:57.295Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions 200
+[debug] [2025-01-27T19:33:57.295Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {}
+[debug] [2025-01-27T19:33:57.295Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project skepsresetusers:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-01-27T19:33:57.296Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers [none]
+[debug] [2025-01-27T19:33:57.698Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers 403
+[debug] [2025-01-27T19:33:57.698Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-01-27T19:33:57.698Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2025-01-27T19:40:03.253Z] ----------------------------------------------------------------------
+[debug] [2025-01-27T19:40:03.255Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --project skepsresetusers
+[debug] [2025-01-27T19:40:03.255Z] CLI Version:   13.0.1
+[debug] [2025-01-27T19:40:03.256Z] Platform:      win32
+[debug] [2025-01-27T19:40:03.256Z] Node Version:  v18.17.1
+[debug] [2025-01-27T19:40:03.260Z] Time:          Mon Jan 27 2025 16:40:03 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-01-27T19:40:03.260Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-27T19:40:03.320Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-27T19:40:03.321Z] > authorizing via signed-in user (felipe.rios@wlck.com.br)
+[debug] [2025-01-27T19:40:03.321Z] [iam] checking project skepsresetusers for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-27T19:40:03.323Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions [none]
+[debug] [2025-01-27T19:40:03.323Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions x-goog-quota-user=projects/skepsresetusers
+[debug] [2025-01-27T19:40:03.323Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-27T19:40:04.376Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions 200
+[debug] [2025-01-27T19:40:04.377Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {}
+[debug] [2025-01-27T19:40:04.377Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project skepsresetusers:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-01-27T19:40:04.378Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers [none]
+[debug] [2025-01-27T19:40:04.800Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers 403
+[debug] [2025-01-27T19:40:04.801Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-01-27T19:40:04.801Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2025-01-27T19:40:18.467Z] ----------------------------------------------------------------------
+[debug] [2025-01-27T19:40:18.469Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\felip\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-01-27T19:40:18.469Z] CLI Version:   13.0.1
+[debug] [2025-01-27T19:40:18.469Z] Platform:      win32
+[debug] [2025-01-27T19:40:18.469Z] Node Version:  v18.17.1
+[debug] [2025-01-27T19:40:18.470Z] Time:          Mon Jan 27 2025 16:40:18 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2025-01-27T19:40:18.470Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-27T19:40:18.526Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-27T19:40:18.527Z] > authorizing via signed-in user (felipe.rios@wlck.com.br)
+[debug] [2025-01-27T19:40:18.527Z] [iam] checking project skepsresetusers for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-27T19:40:18.529Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions [none]
+[debug] [2025-01-27T19:40:18.529Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions x-goog-quota-user=projects/skepsresetusers
+[debug] [2025-01-27T19:40:18.529Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-27T19:40:19.603Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions 200
+[debug] [2025-01-27T19:40:19.603Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/skepsresetusers:testIamPermissions {}
+[debug] [2025-01-27T19:40:19.603Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project skepsresetusers:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-01-27T19:40:19.604Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers [none]
+[debug] [2025-01-27T19:40:20.026Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers 403
+[debug] [2025-01-27T19:40:20.026Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/skepsresetusers {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-01-27T19:40:20.027Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
