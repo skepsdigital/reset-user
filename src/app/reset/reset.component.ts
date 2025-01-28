@@ -41,7 +41,6 @@ export class ResetComponent implements OnInit {
   async sendWelcomeMsg() {
 
     this.loading = true;
-
     try {
       const userContext = await this.getContextContact();
       if (userContext && userContext.resource && userContext.resource.items) {
@@ -49,7 +48,11 @@ export class ResetComponent implements OnInit {
         await this.deleteVariable(variableArray);
       }
       await this.setContact();
-      await this.send();
+      await this.setMasterState()
+      if (!this.queryParticipant.startsWith('55')) {
+        this.queryParticipant = '+' + this.queryParticipant
+      }
+      await this.apiBlip();
       this.result = true;
     } catch (e) {
       throw e;
@@ -63,19 +66,69 @@ export class ResetComponent implements OnInit {
     this.queryParticipant = '';
   }
 
-  async send() {
-    await this.http.post('https://blipnotificationsender.azurewebsites.net/api/trigger', {
-      "routerBotKey": "ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=",
-      "botKey": this.botKey,
-      "botSlug": this.botSlug,
-      "phone": this.queryParticipant,
-      "namespace": "51f27719_6d99_4e9e_9d3e_6ea509024652",
-      "templateName": "testar_bot",
-      "parameters": [],
-      "stateId": "onboarding",
-      "flowId": this.flowId,
-      "contactExtras": {}
-    }).toPromise();
+  generationToken(length: number): string {
+    return Math.random().toString(36).substring(2, 2 + length);
+  }
+
+  apiBlip() {
+    const url = 'https://wlck.http.msging.net/messages';
+    const headers = {
+      Authorization: 'Key ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=',
+      'Content-Type': 'application/json'
+    };
+    const data = {
+      id: this.generationToken(10),
+      to: `${this.queryParticipant}@wa.gw.msging.net`,
+      type: 'application/json',
+      content: {
+        type: 'template',
+        template: {
+          name: 'testar_bot',
+          language: {
+            code: 'pt_BR',
+            policy: 'deterministic',
+          },
+        },
+      },
+    };
+
+    axios
+      .post(url, data, { headers })
+      .then((response) => {
+        console.log('Response:', response);
+      })
+      .catch((error) => {
+        console.error('Error:', error.response ? error.response.data : error.message);
+      });
+  }
+
+  async setMasterState() {
+    const axios = require('axios');
+  
+    const url = 'https://wlck.http.msging.net/commands';
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: 'Key ZGV2c2tlcHNyb3V0ZXI6cm4xckZKS1FIVFkwa1dNZVBNQXI=',
+    };
+    
+    const data = {
+      id: this.generationToken(10),
+      to: "postmaster@msging.net",
+      method: 'set',
+      uri: `/contexts/${this.queryParticipant}@wa.gw.msging.net/Master-State`,
+      type: 'text/plain',
+      resource: `${this.botSlug}@msging.net`,
+    };
+    
+    axios
+      .post(url, data, { headers })
+      .then((response:any) => {
+        console.log('Response:', response.data);
+      })
+      .catch((error:any) => {
+        console.error('Error:', error.response ? error.response.data : error.message);
+      });
+    
   }
 
   async getContextContact() {
@@ -86,10 +139,6 @@ export class ResetComponent implements OnInit {
     };
 
     let formattedParticipant = this.queryParticipant;
-    if (!formattedParticipant.startsWith('55')) {
-      formattedParticipant = '55' + formattedParticipant;
-    }
-
     const data = {
       "id": uuidv4(),
       "to": "postmaster@msging.net",
@@ -113,10 +162,6 @@ export class ResetComponent implements OnInit {
     };
 
     let formattedParticipant = this.queryParticipant;
-    if (!formattedParticipant.startsWith('55')) {
-      formattedParticipant = '55' + formattedParticipant;
-    }
-
     for (let variable of variableArray) {
       const formattedVariable = variable.replace(/ /g, '%20');
 
@@ -145,10 +190,6 @@ export class ResetComponent implements OnInit {
     };
 
     let formattedParticipant = this.queryParticipant;
-    if (!formattedParticipant.startsWith('55')) {
-      formattedParticipant = '55' + formattedParticipant;
-    }
-
     const data = {
       "id": uuidv4(),
       "method": "set",
